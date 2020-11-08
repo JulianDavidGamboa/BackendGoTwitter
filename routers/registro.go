@@ -2,6 +2,7 @@ package routers
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 
 	"github.com/JulianDavidGamboa/BackendGoTwitter/database"
@@ -46,6 +47,8 @@ func Registro(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "No se ha logrado insertar el registro del usuario ", 400)
 		return
 	}
+
+	log.Println("Usuario registrado correctamente")
 
 	w.WriteHeader(http.StatusCreated)
 
